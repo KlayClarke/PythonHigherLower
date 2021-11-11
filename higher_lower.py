@@ -9,6 +9,7 @@ def clear_console():
         command = 'cls'
     os.system(command)
 def play():
+    clear_console()
     #show logo
     print(logo)
     #set variable of score equal to 0 as an official restart of score
@@ -35,7 +36,8 @@ def play():
         ####Ask user who has more follower
         answer = input(f'Who do you think has more followers? Type either A or B: \n').lower()
         #clear screen
-        clear_console()        
+        clear_console()
+        print(logo)
         if answer == 'a':
             if random_account_a['follower_count'] > random_account_b['follower_count']:
                 score += 1
