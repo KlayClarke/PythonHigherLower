@@ -1,6 +1,13 @@
+import os
 import random
 from art import logo, vs
 from game_data import data
+
+def clear_console():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):
+        command = 'cls'
+    os.system(command)
 def play():
     #show logo
     print(logo)
@@ -27,6 +34,8 @@ def play():
                 data.remove(person)
         ####Ask user who has more follower
         answer = input(f'Who do you think has more followers? Type either A or B: \n').lower()
+        #clear screen
+        clear_console()        
         if answer == 'a':
             if random_account_a['follower_count'] > random_account_b['follower_count']:
                 score += 1
