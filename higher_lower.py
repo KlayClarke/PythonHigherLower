@@ -18,6 +18,12 @@ def play():
         print(vs)
         ##### 'to {random entry 2}'
         print(f'Against B: {random_two["name"]}, a {random_two["description"]} from {random_two["country"]}\n')
+        #remove the previous dicts from list to prevent duplicates
+        for person in data:
+            if person['name'] == random_one['name']:
+                data.remove(person)
+            elif person['name'] == random_two['name']:
+                data.remove(person)
         ####Ask user who has more follower
         answer = input(f'Who do you think has more followers? Type either A or B: \n').lower()
         if answer == 'a':
@@ -32,12 +38,6 @@ def play():
                 print(f'You\'re right!\nCurrent score: {score}\n')
             else:
                 print(f'Sorry, but that\'s wrong!\nCurrent score: {score}\n')
-        #remove the previous dicts from list to prevent duplicates
-        for person in data:
-            if person['name'] == random_one['name']:
-                data.remove(person)
-            elif person['name'] == random_two['name']:
-                data.remove(person)
             
     if score == 10:
         print(f'It took you {tries} tries to get {score} answers right. Good job!\n')
