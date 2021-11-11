@@ -46,5 +46,7 @@ def play():
     replay = int(input('Type 1 to replay. Type 2 otherwise.\n'))
     if replay == 1:
         play()
+    else:
+        print('Goodbye!')
 
 play()
