@@ -3,11 +3,14 @@ import random
 from art import logo, vs
 from game_data import data
 
+
 def clear_console():
     command = 'clear'
     if os.name in ('nt', 'dos'):
         command = 'cls'
     os.system(command)
+
+    
 def play():
     clear_console()
     #show logo
@@ -59,5 +62,6 @@ def play():
         play()
     else:
         print('Goodbye!')
+
 
 play()
